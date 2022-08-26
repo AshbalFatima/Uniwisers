@@ -47,6 +47,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/Home/EditUserPost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0VXNlclBvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -63,8 +67,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/UserPost/AddUserPost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBvc3RcQWRkVXNlclBvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/_ViewImports.cshtml]
@@ -78,3 +90,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-cvzy1dhip1
+
+[C:/Users/nehai/OneDrive/Documents/GitHub/Uniwisers/UniWisers/UniWisers/Views/Shared/_MainPageLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluUGFnZUxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-4erxvab5c4

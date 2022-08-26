@@ -1,8 +1,46 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model UniWisers.Models.UserPostDTO
+@{
+    ViewBag.Title = "Index";
+    Layout = "/Views/Shared/_MainLayout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section UserFullName
+{
+    @ViewBag.CurrentUserName
+}
+@section PostForm
+    {
+    <form method="post" asp-action="AddUserPost">
+        <div class="form-group">
+            <input type="text" placeholder="What's on your mind" class="form-control" asp-for="PostData">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+}
+
+
+    @section AllPosts
+{
+    @foreach(var post in ViewBag.model)
+    {
+        <div class="card recent-sales overflow-auto">
+            <div class="filter">
+                @if (@post.UserId == ViewBag.UserId)
+                {
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li>
+                            @Html.ActionLink("Delete","DeletetUserPost","home",new{id=post.Id},new {@class="dropdown-item"})
+                            @*<a class="" href="home/DeletetUserPost/@post.Id">Delete</a></li>*@
+                    </ul>
+                }
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><b>@post.FirstName @post.LastName</b></h5>
+                <p>@post.PostData</p>
+            </div>
+        </div>
+    }
+}

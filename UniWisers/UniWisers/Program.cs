@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UniWisers.Areas.Identity.Data;
+using UniWisers.BusinessLayer;
+using UniWisers.BusinessLayer.IRepo;
 using UniWisers.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -13,7 +15,7 @@ builder.Services.AddDefaultIdentity<UniWisersUser>(options => options.SignIn.Req
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<IUserPost, UserPostRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

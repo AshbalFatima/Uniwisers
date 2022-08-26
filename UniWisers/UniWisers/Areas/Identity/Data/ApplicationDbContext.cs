@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UniWisers.Areas.Identity.Data;
+using UniWisers.Models;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace UniWisers.Data;
 
@@ -12,7 +14,7 @@ public class ApplicationDbContext : IdentityDbContext<UniWisersUser>
         : base(options)
     {
     }
-
+    public DbSet<UserPost> UserPosts { get; set; } = default!;
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

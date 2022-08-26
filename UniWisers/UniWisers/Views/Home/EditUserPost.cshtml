@@ -1,0 +1,11 @@
+﻿@model UniWisers.Models.UserPostDTO
+@{
+    ViewBag.Title = "EditUserPost";
+}
+<form method="post" asp-action="EditUserPost">
+    <div class="form-group">
+        <label for="">Enter Data</label>
+        <input type="text" class="form-control" asp-for="PostData">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

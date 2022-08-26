@@ -1,0 +1,29 @@
+﻿@model UniWisers.Models.UserPostDTO
+@{
+ }
+
+@section PostForm
+    {
+    <form method="post" asp-action="UserPost/AddUserPost">
+        <div class="form-group">
+            <input type="text" placeholder="What's on your mind" class="form-control" asp-for="PostData">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+}
+
+
+    @section AllPosts
+    {
+    <div class="card recent-sales overflow-auto">
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+        </div>
+    </div>
+
+
+}
