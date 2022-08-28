@@ -20,6 +20,14 @@ namespace UniWisers.BusinessLayer
             {
                 userPost.UserId = post.UserId;
                 userPost.PostData = post.PostData;
+                if(post.postImage != null)
+                {
+                    userPost.postImageUrl = post.postImage.FileName;
+                }
+                else
+                {
+                    userPost.postImageUrl = "";
+                }
                 _db.UserPosts.Add(userPost);
                 _db.SaveChanges();
                 return true;    
@@ -99,6 +107,7 @@ namespace UniWisers.BusinessLayer
                 userPost.Id = post.Id;
                 userPost.UserId = post.UserId;
                 userPost.PostData = post.PostData;
+                userPost.postImageUrl = post.postImageUrl;
                 userPost.FirstName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).FirstName;
                 userPost.LastName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).LastName;
                 users.Add(userPost);

@@ -11,5 +11,8 @@ namespace UniWisers.Models
         [ForeignKey("User")]
         public string UserId { get; set; } = default!;
         public virtual UniWisersUser User { get; set; }
+        public string postImageUrl { get; set; }
+        [NotMapped]
+        public IFormFile postImage { get; set; }
     }
 }

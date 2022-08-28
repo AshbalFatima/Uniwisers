@@ -8,7 +8,7 @@
             @if (@post.UserId == ViewBag.UserId)
             {
                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Edit</a></li>
                     <li>
                         @Html.ActionLink("Delete","DeletetUserPost","home",new{id=post.Id},new {@class="dropdown-item"})
@@ -17,8 +17,25 @@
             }
         </div>
         <div class="card-body">
-            <h5 class="card-title"><b>@post.FirstName @post.LastName</b></h5>
-            <p>@post.PostData</p>
+            <nav class="header-nav ms-auto">
+                <ul class="d-flex align-items-center">
+                    <li class="nav-item dropdown pe-3">
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                            <span class="d-none d-md-block ps-2"> &nbsp;@post.FirstName @post.LastName</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <br/>
+            <p class="card-text">@post.PostData</p>
         </div>
+        @if (post.postImageUrl != "")
+        {
+            <img src="~/Uploads/@post.postImageUrl" class="card-img-bottom" alt="~/assets/img/profile-img.jpg">
+            @*height="400" width="200"*@
+
+        }
+        
     </div>
 }

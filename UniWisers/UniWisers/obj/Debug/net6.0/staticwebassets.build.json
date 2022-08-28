@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cZ6fr1QCUSliMfMhuW/sPd1WYUffuFMWX/9vH1tH6kM=",
+  "Hash": "3mRC660f4QMQ4AevtexzogYTLWehEopQAnX6xxz1nF8=",
   "Source": "UniWisers",
   "BasePath": "_content/UniWisers",
   "Mode": "Default",
@@ -7291,6 +7291,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\Uploads\\N.CV_Picture.jpg",
+      "SourceId": "UniWisers",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\",
+      "BasePath": "_content/UniWisers",
+      "RelativePath": "Uploads/N.CV_Picture.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\N.CV_Picture.jpg"
     }
   ]
 }
