@@ -22,25 +22,5 @@
 
     @section AllPosts
 {
-    @foreach(var post in ViewBag.model)
-    {
-        <div class="card recent-sales overflow-auto">
-            <div class="filter">
-                @if (@post.UserId == ViewBag.UserId)
-                {
-                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li>
-                            @Html.ActionLink("Delete","DeletetUserPost","home",new{id=post.Id},new {@class="dropdown-item"})
-                            @*<a class="" href="home/DeletetUserPost/@post.Id">Delete</a></li>*@
-                    </ul>
-                }
-            </div>
-            <div class="card-body">
-                <h5 class="card-title"><b>@post.FirstName @post.LastName</b></h5>
-                <p>@post.PostData</p>
-            </div>
-        </div>
-    }
+    @await Component.InvokeAsync("UserPosts", new { UserId = ""})
 }

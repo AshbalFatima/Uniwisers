@@ -67,7 +67,23 @@ namespace UniWisers.BusinessLayer
             return userPost;
         }
 
-        public string GetUserName(string id)
+        public async Task<IEnumerable<UserPostDTO>> GetSpecificUserPostList(string id)
+        {
+            var users = new List<UserPostDTO>();
+            foreach (var post in _db.UserPosts.OrderByDescending(i => i.Id).Where(x => x.UserId == id))
+            {
+                var userPost = new UserPostDTO();
+                userPost.Id = post.Id;
+                userPost.UserId = post.UserId;
+                userPost.PostData = post.PostData;
+                userPost.FirstName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).FirstName;
+                userPost.LastName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).LastName;
+                users.Add(userPost);
+            }
+            return users;
+        }
+
+            public string GetUserName(string id)
         {
 
             var user = _db.Users.FirstOrDefault(i => i.Id == id).FirstName;

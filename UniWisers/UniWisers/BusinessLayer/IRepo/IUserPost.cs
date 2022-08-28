@@ -8,6 +8,7 @@ namespace UniWisers.BusinessLayer.IRepo
         public bool DeletePost(int postId);
         public UserPostDTO GetPostById(int id);
         public IEnumerable<UserPostDTO> GetUserPostList();
+        public Task<IEnumerable<UserPostDTO>> GetSpecificUserPostList(string id);
         public string GetUserName(string id);
     }
 }
