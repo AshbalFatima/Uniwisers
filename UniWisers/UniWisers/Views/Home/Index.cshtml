@@ -15,9 +15,10 @@
             <input type="text" placeholder="What's on your mind" class="form-control" asp-for="PostData" autocomplete="off" required>
         </div>
         <div class="form-group">
-            <input type="file" class="form-control" asp-for="postImage">
+            <input type="file" class="form-control" asp-for="postImage" max="1">
         </div>
         <br />
+        
         <button type="submit" class="btn btn-primary">Post</button>
     </form>
 }
