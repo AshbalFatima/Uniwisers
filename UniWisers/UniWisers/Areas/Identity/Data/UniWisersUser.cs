@@ -11,6 +11,8 @@ public class UniWisersUser : IdentityUser
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string ProfilePic { get; set; }
+    public string? ProfilePic { get; set; }
+    public string? Job { get; set; }
+    public string? Country { get; set; }
 }
 

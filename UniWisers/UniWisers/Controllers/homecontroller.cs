@@ -9,11 +9,13 @@ namespace UniwisersApplication.Controllers
     public class HomeController : Controller
     {
         private readonly IUserPost _userPost;
+        private readonly IUserRepo _userRepo;
         private readonly IWebHostEnvironment Environment;
 
-        public HomeController(IUserPost userPost, IWebHostEnvironment environment)
+        public HomeController(IUserPost userPost, IUserRepo userRepo, IWebHostEnvironment environment)
         {
             _userPost = userPost;
+            _userRepo = userRepo;   
             Environment = environment;  
         }
 
@@ -31,8 +33,7 @@ namespace UniwisersApplication.Controllers
             {
                 var AllPosts = _userPost.GetUserPostList();
                 ViewBag.model = AllPosts;
-                ViewBag.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                ViewBag.CurrentUserName = _userPost.GetUserName(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                ViewBag.User = _userRepo.GetUserById(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 return View();
             }
             return Redirect("~/Identity/Account/Login");
@@ -84,6 +85,5 @@ namespace UniwisersApplication.Controllers
             var deletePost = _userPost.DeletePost(id);
             return RedirectToAction("Index");
         }
-
     }
 }

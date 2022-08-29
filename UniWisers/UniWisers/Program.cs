@@ -16,6 +16,7 @@ builder.Services.AddDefaultIdentity<UniWisersUser>(options => options.SignIn.Req
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUserPost, UserPostRepo>();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

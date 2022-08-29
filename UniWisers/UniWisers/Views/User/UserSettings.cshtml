@@ -1,0 +1,139 @@
+﻿@model UniWisers.Models.UserDTO
+@{
+    Layout = "/Views/Shared/_MainPageLayout.cshtml";
+}
+
+@section MainBody
+{
+    <br/>
+    <br/>
+    <br/>
+    <section class="section">
+        <div class="row align-items-top">
+            <div class="mx-3 col-lg-3">
+                <!-- Default Card -->
+                <div class="card">
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        @if (@Model.ProfilePicUrl != null)
+                        {
+                            <img src="~/Uploads/@Model.ProfilePicUrl" height="140" width="120" alt="Profile" class="rounded-circle">
+                        }
+                        else
+                        {
+                            <img src="~/assets/img/profile.jpg" alt="Profile" height="140" width="120" class="rounded-circle">
+                        }
+                        <br />
+                        <h4><a style="text-decoration:none" href="~/user/profile"><b>@Model.FirstName @Model.LastName</b></a></h4>
+                        <h3>@Model.Job</h3>
+                        <div class="social-links mt-2">
+                            <a href="#" class="btn btn-primary">Follow</a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                       <div class="row pt-4">
+                           <div class="col-md-6">
+                               <h5>Followers</h5>
+                               <span>100</span>
+                           </div>
+                           <div class="col-md-6">
+                               <h5>Following</h5>
+                               <span>150</span>
+                           </div>
+                       </div>
+                        <div class="social-links mt-2">
+                            <a href="~/user/UserSettings" class="settings">
+                                <i class="ri-admin-fill" style="height:200px">
+                                    User Profile
+                                </i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hi @Model.FirstName, Update your details here.</h5>
+                        <form method="post" asp-action="UserSettings" enctype="multipart/form-data">
+                            <div class="row mb-3">
+                                <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                <div class="col-md-8 col-lg-9">
+                                @if(@Model.ProfilePicUrl == null)
+                                {
+                                        <img src="~/Uploads/@Model.ProfilePicUrl" width="150" height="150" alt="Profile">
+                                }
+                                else
+                                {
+                                        <img src="~/assets/img/profile.jpg" width="150" height="150" alt="Profile">
+                                }
+                                    
+                                    <div class="pt-2" style="display:inline-block">
+                                        <div class="image-upload">
+                                            <label for="file-input">
+                                                <i class="bi bi-upload"></i>
+                                            </label>
+                                            <input id="file-input" type="file" hidden asp-for="ProfileImage" max="1"/>
+                                        </div>
+                                        <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label>First Name</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input type="text" class="form-control" asp-for="FirstName">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Last Name</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input type="text" class="form-control" asp-for="LastName">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                           
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="job" type="text" class="form-control" asp-for="Job">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="country" type="text" class="form-control" asp-for="Country">
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                                    <div class="col-md-8 col-lg-11">
+                                        <input name="email" type="email" class="form-control" asp-for="Email">
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form><!-- End Profile Edit Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

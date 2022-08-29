@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3mRC660f4QMQ4AevtexzogYTLWehEopQAnX6xxz1nF8=",
+  "Hash": "Mi4wTggmIdvWoHstdKqS/P6J0qDe2GV2WKzBnt3JWeA=",
   "Source": "UniWisers",
   "BasePath": "_content/UniWisers",
   "Mode": "Default",
@@ -1392,6 +1392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\product-5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\assets\\img\\profile.jpg",
+      "SourceId": "UniWisers",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\",
+      "BasePath": "_content/UniWisers",
+      "RelativePath": "assets/img/profile.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\profile.jpg"
     },
     {
       "Identity": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\assets\\img\\profile-img.jpg",
@@ -7293,6 +7310,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\Uploads\\GridArt_20220716_184636610.jpg",
+      "SourceId": "UniWisers",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\",
+      "BasePath": "_content/UniWisers",
+      "RelativePath": "Uploads/GridArt_20220716_184636610.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\GridArt_20220716_184636610.jpg"
+    },
+    {
       "Identity": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\Uploads\\N.CV_Picture.jpg",
       "SourceId": "UniWisers",
       "SourceType": "Discovered",
@@ -7308,6 +7342,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\N.CV_Picture.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\Uploads\\WhatsApp Image 2022-08-18 at 11.41.11 PM.jpeg",
+      "SourceId": "UniWisers",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nehai\\OneDrive\\Documents\\GitHub\\Uniwisers\\UniWisers\\UniWisers\\wwwroot\\",
+      "BasePath": "_content/UniWisers",
+      "RelativePath": "Uploads/WhatsApp Image 2022-08-18 at 11.41.11 PM.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\WhatsApp Image 2022-08-18 at 11.41.11 PM.jpeg"
     }
   ]
 }

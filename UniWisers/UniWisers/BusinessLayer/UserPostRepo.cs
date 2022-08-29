@@ -1,4 +1,5 @@
-﻿using UniWisers.BusinessLayer.IRepo;
+﻿using UniWisers.Areas.Identity.Data;
+using UniWisers.BusinessLayer.IRepo;
 using UniWisers.Data;
 using UniWisers.Models;
 
@@ -84,6 +85,7 @@ namespace UniWisers.BusinessLayer
                 userPost.Id = post.Id;
                 userPost.UserId = post.UserId;
                 userPost.PostData = post.PostData;
+                userPost.postImageUrl = post.postImageUrl;
                 userPost.FirstName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).FirstName;
                 userPost.LastName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).LastName;
                 users.Add(userPost);
@@ -91,7 +93,21 @@ namespace UniWisers.BusinessLayer
             return users;
         }
 
-            public string GetUserName(string id)
+        public UserDTO GetUserById(string id)
+        {
+            var user =  _db.Users.FirstOrDefault(i => i.Id == id);
+            var userDTO = new UserDTO();
+            userDTO.Id = user.Id;
+            userDTO.FirstName = user.FirstName;
+            userDTO.LastName = user.LastName;
+            userDTO.Country = user.Country;
+            userDTO.Job = user.Job;
+            userDTO.ProfilePicUrl = user.ProfilePic;
+            return userDTO;
+
+        }
+
+        public string GetUserName(string id)
         {
 
             var user = _db.Users.FirstOrDefault(i => i.Id == id).FirstName;

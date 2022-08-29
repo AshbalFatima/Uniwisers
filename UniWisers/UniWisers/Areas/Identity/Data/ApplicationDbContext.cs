@@ -31,5 +31,8 @@ internal class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<Uni
     {
         builder.Property(u => u.FirstName).HasMaxLength(255);
         builder.Property(u => u.LastName).HasMaxLength(255);
+        builder.Property(u => u.Job).HasMaxLength(255);
+        builder.Property(u => u.Country).HasMaxLength(255);
+        builder.Property(u => u.ProfilePic).HasMaxLength(255);
     }
 }

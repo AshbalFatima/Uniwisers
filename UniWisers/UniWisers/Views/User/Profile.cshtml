@@ -1,0 +1,82 @@
+﻿@model UniWisers.Models.UserPostDTO
+@{
+    Layout = "/Views/Shared/_MainPageLayout.cshtml";
+}
+
+@section MainBody
+{
+    <br/>
+    <br/>
+    <br/>
+    <section class="section">
+        <div class="row align-items-top">
+            <div class="mx-3 col-lg-3">
+                <!-- Default Card -->
+                <div class="card">
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        @if (@ViewBag.User.ProfilePicUrl == null)
+                        {
+                            <img src="~/assets/img/profile.jpg" alt="Profile" height="140" width="120" class="rounded-circle">
+                           
+                        }
+                        else
+                        {
+                            <img src="~/Uploads/@ViewBag.User.ProfilePicUrl" height="140" width="120" alt="Profile" class="rounded-circle">
+                        }
+                        <br />
+                        <h4><a style="text-decoration:none" href="~/user/profile"><b>@ViewBag.User.FirstName @ViewBag.User.LastName</b></a></h4>
+                        <h3>@ViewBag.user.Job</h3>
+                        <div class="social-links mt-2">
+                            <a href="#" class="btn btn-primary">Follow</a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                       <div class="row pt-4">
+                           <div class="col-md-6">
+                               <h5>Followers</h5>
+                               <span>100</span>
+                           </div>
+                           <div class="col-md-6">
+                               <h5>Following</h5>
+                               <span>150</span>
+                           </div>
+                       </div>
+                        <div class="social-links mt-2">
+                            <a href="~/user/UserSettings" class="settings">
+                                <i class="ri-admin-fill" style="height:200px">
+                                    User Profile
+                                </i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hi @ViewBag.User.FirstName</h5>
+                        <form method="post" asp-controller="home" asp-action="AddUserPost" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="text" placeholder="What's on your mind" class="form-control" asp-for="PostData" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control" asp-for="postImage" max="1">
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </form>
+                    </div>
+                </div>
+               @await Component.InvokeAsync("UserPosts", new { UserId = ViewBag.User.Id})  
+            </div>
+        </div>
+    </section>
+}

@@ -1,4 +1,5 @@
-﻿using UniWisers.Models;
+﻿using UniWisers.Areas.Identity.Data;
+using UniWisers.Models;
 namespace UniWisers.BusinessLayer.IRepo
 {
     public interface IUserPost
@@ -9,6 +10,7 @@ namespace UniWisers.BusinessLayer.IRepo
         public UserPostDTO GetPostById(int id);
         public IEnumerable<UserPostDTO> GetUserPostList();
         public Task<IEnumerable<UserPostDTO>> GetSpecificUserPostList(string id);
-        public string GetUserName(string id);
+        
+
     }
 }
