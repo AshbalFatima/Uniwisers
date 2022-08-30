@@ -4,6 +4,7 @@
 @inject SignInManager<UniWisersUser> SignInManager
 @inject UserManager<UniWisersUser> UserManager
 
+<!-- Navbar of logged in user -->
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
@@ -17,7 +18,7 @@
     </li>
 }
 else
-{
+{<!-- Navbar of NOT Logged In User -->
     <li class="nav-item">
         <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
     </li>

@@ -6,6 +6,8 @@
 {
     @RenderSection("navBarUser", required:false)
 }
+
+<!-- RIGHT SIDEBAR -->
 @section MainBody
 {
     <aside id="sidebar" class="sidebar">
@@ -19,6 +21,7 @@
     
     <!-- End Sidebar-->
 
+    <!-- MAIN NEWSFEED PORTION -->
     <main id="main" class="main">
         <section class="section dashboard">
             <div class="row">
@@ -35,7 +38,8 @@
                         @RenderSection("AllPosts", required:true)
                     </div>
                 </div><!-- End Left side columns -->
-                <!-- Right side columns -->
+
+                <!-- RIGHT SIDEBAR -->
                 <div class="col-lg-4">
                     <!-- Recent Activity -->
                     <div class="card">
