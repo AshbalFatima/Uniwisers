@@ -88,6 +88,7 @@ namespace UniWisers.BusinessLayer
                 userPost.postImageUrl = post.postImageUrl;
                 userPost.FirstName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).FirstName;
                 userPost.LastName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).LastName;
+                userPost.UserImageUrl = _db.Users.FirstOrDefault(i => i.Id == post.UserId).ProfilePic;
                 users.Add(userPost);
             }
             return users;
@@ -126,6 +127,7 @@ namespace UniWisers.BusinessLayer
                 userPost.postImageUrl = post.postImageUrl;
                 userPost.FirstName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).FirstName;
                 userPost.LastName = _db.Users.FirstOrDefault(i => i.Id == post.UserId).LastName;
+                userPost.UserImageUrl = _db.Users.FirstOrDefault(i => i.Id == post.UserId).ProfilePic;
                 users.Add(userPost);
             }
            return users;

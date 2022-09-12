@@ -8,6 +8,7 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string postImageUrl { get; set; }
+        public string UserImageUrl { get; set; }
         public IFormFile postImage { get; set; }
     }
 }

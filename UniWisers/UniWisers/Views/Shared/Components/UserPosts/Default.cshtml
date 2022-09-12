@@ -22,9 +22,9 @@
                     <ul class="d-flex align-items-center">
                         <li class="nav-item dropdown pe-3">
                             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                            @if (@ViewBag.User.ProfilePicUrl != null)
+                            @if (post.UserImageUrl != null && post.UserImageUrl != "")
                             {
-                                <img src="~/Uploads/@ViewBag.User.ProfilePicUrl" height="30" width="30" alt="Profile" class="rounded-circle">
+                                <img src="~/Uploads/@post.UserImageUrl" height="30" width="30" alt="Profile" class="rounded-circle">
                             }
                             else
                             {
@@ -40,8 +40,8 @@
             </div>
         @if (post.postImageUrl != "")
         {
-                    <img src="~/Uploads/@post.postImageUrl" class="card-img-bottom" alt="~/assets/img/profile-i.jpg">
-            @*height="400" width="200"*@
+            <img src="~/Uploads/@post.postImageUrl" height="400" class="card-img-bottom" alt="~/assets/img/profile-i.jpg">
+            
         }  
         </div>
     

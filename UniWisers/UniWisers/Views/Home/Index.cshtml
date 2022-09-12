@@ -19,7 +19,7 @@
 
 @section userInfo
 {
-    @if (@ViewBag.User.ProfilePicUrl != null)
+    @if (@ViewBag.User.ProfilePicUrl != null && @ViewBag.User.ProfilePicUrl != "")
     {
         <img src="~/Uploads/@ViewBag.User.ProfilePicUrl" height="140" width="120" alt="Profile" class="rounded-circle">
     }

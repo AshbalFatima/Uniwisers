@@ -49,7 +49,7 @@ namespace UniWisers.BusinessLayer
                 findUser.Country = user.Country;
                 findUser.Email = user.Email;
                 findUser.Job = user.Job;
-                if (user.ProfileImage == null)
+                if (user.ProfileImage == null )
                 {
                     findUser.ProfilePic = "";
                 }
