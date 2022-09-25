@@ -1,0 +1,71 @@
+﻿@model UniWisers.Models.UserPostDTO
+@{
+    ViewBag.Title = "Index";
+    Layout = "/Views/Shared/_MainLayout.cshtml";
+}
+@if (@ViewBag.User.Status == Status.Account_Active)
+{
+    @section navBarUser
+    {
+        @if (@ViewBag.User.ProfilePicUrl != null)
+        {
+            <img src="~/Uploads/@ViewBag.User.ProfilePicUrl" height="30" width="30" alt="Profile" class="rounded-circle">
+        }
+        else
+        {
+            <img src="~/assets/img/profile.jpg" alt="Profile" height="30" width="30" class="rounded-circle">
+        }
+        <span class="d-none d-md-block dropdown-toggle ps-2">@ViewBag.User.FirstName @ViewBag.User.LastName</span>
+}
+
+    @section userInfo
+    {
+        @if (@ViewBag.User.ProfilePicUrl != null && @ViewBag.User.ProfilePicUrl != "")
+        {
+            <img src="~/Uploads/@ViewBag.User.ProfilePicUrl" height="140" width="120" alt="Profile" class="rounded-circle">
+        }
+        else
+        {
+            <img src="~/assets/img/profile.jpg" alt="Profile" height="140" width="120" class="rounded-circle">
+        }
+        <br />
+        <h4><a style="text-decoration:none" href="~/user/profile"><b>@ViewBag.User.FirstName @ViewBag.User.LastName</b></a></h4>
+        <h5>@ViewBag.User.Job</h5>
+        <div class="social-links mt-2">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+    }
+    
+    @section PostForm
+    {
+
+        <form method="post" asp-action="AddUserPost" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" placeholder="What's on your mind" class="form-control" asp-for="PostData" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control" asp-for="postImage" max="1">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+    }
+    
+    @section AllPosts
+    {
+    <div class="col-12">
+        @await Component.InvokeAsync("UserPosts", new { UserId = ""})
+    </div>
+
+    }
+}
+else
+{
+    @section PostForm
+    {
+        <p>Your account is blocked.</p>
+    }
+}

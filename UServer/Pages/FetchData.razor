@@ -1,0 +1,79 @@
+﻿@page "/reportedposts"
+@inject UniWisers.BusinessLayer.IRepo.IUserPost userPost
+@inject NavigationManager NavigationManager;
+<PageTitle>Weather forecast</PageTitle>
+
+
+
+@if (reportedPosts != null && reportedPosts.Any())
+{
+    foreach(var post in reportedPosts)
+    {
+        if (@post.Status == Status.Reported_Post_UnderReview)
+        {
+            <section class="section">
+                <div class="row align-items-top">
+                    <div class="col-lg-12">
+                        <div class="card mb-3">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="assets/img/card.jpg" height="200" width="200" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@post.FirstName @post.LastName</h5>
+                                        <p class="card-text">@post.PostData</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="card-footer">
+
+                                        <div class="btn btn-danger" @onclick="@(()=> ReportedPostAction(post.PostId, Status.Reported_Post_Approved))">
+                                            <span>Approve</span>
+                                        </div>
+
+                                        <div class="btn btn-warning" @onclick="@(()=> ReportedPostAction(post.PostId, Status.Reported_Post_Rejected))">
+                                            <span>Reject</span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+        
+    }
+}
+<br />
+<hr />
+<h3>History</h3>
+@if (reportedPosts != null && reportedPosts.Any())
+{
+    foreach (var post in reportedPosts)
+    {
+        if (post.Status == Status.Reported_Post_Approved)
+        {
+            <p><i>The reported post of @post.FirstName @post.LastName is APPROVED by administration and is deleted. </i></p>
+        }
+        else if (post.Status == Status.Reported_Post_Rejected)
+        {
+            <p><i>The reported post of @post.FirstName @post.LastName is reviewed carefully by administration 
+                and the appeal to delete is is REJECTED. </i></p>
+        }
+    }
+}
+@code {
+    private IEnumerable<ReportedPostDTO>? reportedPosts { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        reportedPosts = userPost.GetReportedPostList();
+    }
+    protected async void ReportedPostAction(int postID, string status)
+    {
+        userPost.UpdateReportedPostStatus(postID, status);
+        NavigationManager.NavigateTo("/reportedposts", true);
+    }
+}

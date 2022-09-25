@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniWisers", "UniWisers\UniWisers.csproj", "{11757A79-873C-4797-B1A5-0226A4EE56D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UServer", "UServer\UServer.csproj", "{0F12733F-C1AC-4233-95E5-D45614751BD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11757A79-873C-4797-B1A5-0226A4EE56D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11757A79-873C-4797-B1A5-0226A4EE56D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11757A79-873C-4797-B1A5-0226A4EE56D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11757A79-873C-4797-B1A5-0226A4EE56D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F12733F-C1AC-4233-95E5-D45614751BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F12733F-C1AC-4233-95E5-D45614751BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F12733F-C1AC-4233-95E5-D45614751BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F12733F-C1AC-4233-95E5-D45614751BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2DD92CA-F6E1-402E-A0BE-C764F06F833B}
+	EndGlobalSection
+EndGlobal
